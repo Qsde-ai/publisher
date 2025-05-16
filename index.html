@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publusher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Publisher</h1>
+        <div id="auth-container">
+            <button id="google-login" class="auth-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                Войти через Google
+            </button>
+            <div id="user-profile" class="hidden">
+                <img id="user-avatar" src="" alt="Аватар" class="user-avatar">
+                <span id="user-name"></span>
+                <a href="editor.html" class="btn new-article-btn">Новая статья</a>
+                <button id="logout" class="btn logout-btn">Выйти</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="articles-section">
+            <h2>Последние статьи</h2>
+            <div id="articles-list" class="articles-grid">
+            </div>
+        </section>
+    </main>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="auth.js"></script>
+    <script src="articles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.getElementById('user-profile').classList.remove('hidden');
+                document.getElementById('google-login').classList.add('hidden');
+                document.getElementById('user-name').textContent = user.name;
+                document.getElementById('user-avatar').src = user.picture;
+            }
+            loadArticles();
+            document.getElementById('logout').addEventListener('click', function () {
+                if (window.google && google.accounts) {
+                    google.accounts.id.disableAutoSelect();
+                }
+                localStorage.removeItem('user');
+                window.location.reload();
+            });
+        });
+    </script>
+</body>
+
+</html>

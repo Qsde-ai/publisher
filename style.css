@@ -1,0 +1,251 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1,
+h2,
+h3 {
+    color: #4285f4;
+}
+
+#auth-container {
+    display: flex;
+    align-items: center;
+}
+
+.auth-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #f5f5f5;
+}
+
+.auth-button img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+#user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.article-card {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+    color: #4285f4;
+    margin-bottom: 0.5rem;
+}
+
+.article-preview {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-article-btn {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+}
+
+.read-more-btn {
+    color: #4285f4;
+    border: 1px solid #4285f4;
+    background: white;
+}
+
+.back-btn {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.full-article {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.article-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.author-avatar-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.article-body {
+    line-height: 1.8;
+}
+
+.editor-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+#editor-container {
+    height: 400px;
+    margin-bottom: 1rem;
+}
+
+.publish-btn {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.user-avatar,
+.author-avatar,
+.author-avatar-large,
+#user-avatar,
+#author-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-avatar,
+#user-avatar,
+.author-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.author-avatar-large,
+#author-avatar {
+    width: 60px;
+    height: 60px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+#auth-container {
+    margin-left: auto;
+}
+
+#user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    right: 0;
+    
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logout-btn {
+    background-color: #ea4335;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #auth-container {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #user-profile {
+        justify-content: flex-end;
+        width: 100%;
+        padding: 6px;
+    }
+}
