@@ -51,6 +51,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 10px;
+    float: right;
 }
 
 #user-avatar {
@@ -95,6 +96,7 @@ main {
     background-color: #4285f4;
     color: white;
     border: none;
+    scale: 63%;
 }
 
 .read-more-btn {
@@ -159,6 +161,9 @@ main {
     color: white;
     border: none;
     padding: 0.8rem 1.5rem;
+    margin-bottom: 20px;
+    float: right;
+    margin-top: 50px;
 }
 
 .hidden {
@@ -195,6 +200,28 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
+}
+
+.back-btn {
+    order: 1;
+}
+
+#auth-container {
+    order: 2;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+#user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    right: 0;
 }
 
 #auth-container {
@@ -247,5 +274,6 @@ main {
         justify-content: flex-end;
         width: 100%;
         padding: 6px;
+        float: right;
     }
 }

@@ -14,12 +14,12 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="back-btn">← Все статьи</a>
+        </div>
             <div id="auth-container">
                 <div id="user-profile">
                     <img id="user-avatar" src="" alt="Аватар" class="user-avatar">
                     <span id="user-name"></span>
                     <button id="logout" class="btn logout-btn">Выйти</button>
-                </div>
             </div>
         </div>
     </header>
@@ -27,13 +27,13 @@
     <main class="editor-container">
         <div class="editor-header">
             <h1>Новая статья</h1>
-            <button id="publish-btn" class="btn publish-btn">Опубликовать</button>
         </div>
 
         <input type="text" id="article-title" placeholder="Введите заголовок статьи" class="title-input">
         <div id="editor-container">
             <div id="editor"></div>
         </div>
+        <button id="publish-btn" class="btn publish-btn">Опубликовать</button>
     </main>
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

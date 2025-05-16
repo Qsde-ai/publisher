@@ -1,6 +1,7 @@
 const GOOGLE_CLIENT_ID = '541269307419-rhh5srj3dm3tc3hquqofpa2mskhdeosd.apps.googleusercontent.com';
 const USER_STORAGE_KEY = 'user';
 
+
 function initGoogleAuth() {
     if (!window.google) {
         console.error('Google API не загружен');
@@ -10,7 +11,8 @@ function initGoogleAuth() {
         client_id: GOOGLE_CLIENT_ID,
         callback: handleCredentialResponse,
         auto_select: false,
-        prompt_parent_id: 'google-login-container'
+        prompt_parent_id: 'google-login-container',
+        redirect_uri: window.location.origin
     });
     renderLoginButton();
 }
