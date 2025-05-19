@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publusher</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <div id="user-profile" class="hidden">
                 <img id="user-avatar" src="" alt="Аватар" class="user-avatar">
                 <span id="user-name"></span>
-                <a href="editor.html" class="btn new-article-btn">Новая статья</a>
+                <a href="/html/editor.html" class="btn new-article-btn">Новая статья</a>
                 <button id="logout" class="btn logout-btn">Выйти</button>
             </div>
         </div>
@@ -35,8 +35,8 @@
     </main>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="auth.js"></script>
-    <script src="articles.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/articles.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const user = JSON.parse(localStorage.getItem('user'));
@@ -46,14 +46,8 @@
                 document.getElementById('user-name').textContent = user.name;
                 document.getElementById('user-avatar').src = user.picture;
             }
-            loadArticles();
-            document.getElementById('logout').addEventListener('click', function () {
-                if (window.google && google.accounts) {
-                    google.accounts.id.disableAutoSelect();
-                }
-                localStorage.removeItem('user');
-                window.location.reload();
-            });
+            displayArticles();
+            document.getElementById('logout').addEventListener('click', logout);
         });
     </script>
 </body>

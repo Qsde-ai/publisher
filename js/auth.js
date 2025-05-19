@@ -20,10 +20,11 @@ function initGoogleAuth() {
 function handleCredentialResponse(response) {
     try {
         const responsePayload = parseJwt(response.credential);
+        const decodedName = decodeURIComponent(escape(responsePayload.name));
 
         const userData = {
             id: responsePayload.sub,
-            name: responsePayload.name,
+            name: decodedName,
             email: responsePayload.email,
             picture: responsePayload.picture,
             token: response.credential
@@ -63,7 +64,7 @@ function updateUIAfterLogin(user) {
         loginBtn.classList.add('hidden');
     }
     if (window.location.pathname.includes('login.html')) {
-        window.location.href = 'index.html';
+        window.location.href = '/html/index.html';
     }
 }
 
@@ -94,11 +95,13 @@ function logout() {
         }
         localStorage.removeItem(USER_STORAGE_KEY);
         sessionStorage.removeItem(USER_STORAGE_KEY);
+
         const userProfile = document.getElementById('user-profile');
         const loginBtn = document.getElementById('google-login');
         if (userProfile) userProfile.classList.add('hidden');
         if (loginBtn) loginBtn.classList.remove('hidden');
-        window.location.reload();
+
+        window.location.href = '/html/index.html';
     } catch (error) {
         console.error('Ошибка при выходе:', error);
     }

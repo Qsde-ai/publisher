@@ -103,6 +103,7 @@ main {
     color: #4285f4;
     border: 1px solid #4285f4;
     background: white;
+    margin-top: 20px;
 }
 
 .back-btn {
@@ -237,7 +238,7 @@ main {
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     right: 0;
-    
+
 }
 
 .user-avatar {

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 google.accounts.id.disableAutoSelect();
             }
             localStorage.removeItem('user');
-            window.location.href = 'index.html';
+            window.location.href = '/html/index.html';
         });
     }
 });
