@@ -11,8 +11,8 @@ function initGoogleAuth() {
         client_id: GOOGLE_CLIENT_ID,
         callback: handleCredentialResponse,
         auto_select: false,
-        prompt_parent_id: 'google-login-container',
-        redirect_uri: window.location.origin
+        cancel_on_tap_outside: false,
+        use_fedcm_for_prompt: true
     });
     renderLoginButton();
 }
@@ -76,9 +76,10 @@ function renderLoginButton() {
                 type: 'standard',
                 theme: 'outline',
                 size: 'large',
-                text: 'signin_with',
+                text: 'continue_with',
                 shape: 'rectangular',
-                logo_alignment: 'left'
+                logo_alignment: 'left',
+                width: '200'
             }
         );
         google.accounts.id.prompt(notification => {
